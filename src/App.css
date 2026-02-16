@@ -1,0 +1,416 @@
+/* ===========================
+   Global Styles & Variables
+   =========================== */
+:root {
+  --primary-navy: #0F172A;
+  --secondary-teal: #14B8A6;
+  --accent-amber: #F59E0B;
+  --neutral-bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text-dark: #1E293B;
+  --text-light: #64748B;
+  --error-red: #EF4444;
+  --success-green: #10B981;
+  --border-color: #E2E8F0;
+  
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: var(--neutral-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+.hero {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1e3a5f 100%);
+  color: var(--white);
+  padding: 120px 20px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background-color: var(--accent-amber);
+  color: var(--primary-navy);
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 16px 48px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.cta-button:hover {
+  background-color: #D97706;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* ===========================
+   Features Section
+   =========================== */
+.features {
+  padding: 80px 20px;
+  background-color: var(--white);
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.feature-card {
+  background: var(--neutral-bg);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--secondary-teal);
+  box-shadow: 0 12px 24px rgba(20, 184, 166, 0.15);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-bottom: 12px;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ===========================
+   Booking Form Section
+   =========================== */
+.booking-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, var(--white), var(--neutral-bg));
+}
+
+.booking-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
+}
+
+.booking-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.booking-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.required {
+  color: var(--error-red);
+}
+
+.form-input {
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  transition: var(--transition);
+  font-family: var(--font-family);
+  background-color: var(--white);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--secondary-teal);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+.form-input.error {
+  border-color: var(--error-red);
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  color: var(--error-red);
+  font-size: 0.875rem;
+  margin-top: 6px;
+}
+
+.submit-button {
+  background-color: var(--secondary-teal);
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 12px;
+}
+
+.submit-button:hover {
+  background-color: #0D9488;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 184, 166, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.success-message {
+  background-color: #D1FAE5;
+  color: #065F46;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--success-green);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.footer {
+  background-color: var(--primary-navy);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto;
+}
+
+.footer p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px 60px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 14px 36px;
+  }
+
+  .features {
+    padding: 60px 20px;
+  }
+
+  .features-title {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    gap: 30px;
+  }
+
+  .booking-section {
+    padding: 60px 20px;
+  }
+
+  .booking-container {
+    padding: 40px 30px;
+  }
+
+  .booking-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 16px 50px;
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.95rem;
+    padding: 12px 32px;
+  }
+
+  .features {
+    padding: 50px 16px;
+  }
+
+  .features-title {
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .feature-card {
+    padding: 32px 24px;
+  }
+
+  .booking-section {
+    padding: 50px 16px;
+  }
+
+  .booking-container {
+    padding: 32px 20px;
+  }
+
+  .booking-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .form-input {
+    padding: 12px 14px;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
